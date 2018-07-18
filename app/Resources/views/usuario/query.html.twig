@@ -1,0 +1,19 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} GESTIÓN DE USUARIOS **CONSULTA**
+        <a href="{{path("addUsuario")}}" class="btn btn-success">
+            <span class="glyphicon glyphicon-new-window"></span>  Nuevo Usuario</a>
+{% endblock %}
+{% block contenido %}
+    <div class="container">
+        {% for message in app.session.flashbag().get('status') %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+        <hr/>
+
+        <div class="container">
+            {{ sg_datatables_render(datatable) }}
+        </div>
+    </div>
+{% endblock %}

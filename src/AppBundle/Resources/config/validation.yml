@@ -1,0 +1,16 @@
+AppBundle\Entity\Fco:
+    properties:
+        codigo:
+            - NotBlank: {message:"El codigo no puede estar vacío"}
+            - Length: 
+                 max: 3
+                 maxMessage: "El código debe tener {{ limit }} caracteres como máximo"
+AppBundle\Entity\TipoIlt:
+    properties:
+        codigo:
+            - NotBlank: {message:"El codigo no puede estar vacío"}
+            - Length: 
+                 max: 1
+                 maxMessage: "El código debe tener {{ limit }} caracteres como máximo"
+
+     

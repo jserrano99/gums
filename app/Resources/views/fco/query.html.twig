@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} FORMAS DE CONTRATACION (FCO) **CONSULTA** 
+    <a href="{{path("addFco")}}" 
+       class="btn btn-success"
+       target="_blank">
+        <span class="glyphicon glyphicon-new-window"></span> Nueva Forma Contratación</a>
+    <hr/>
+{% endblock %} 
+
+{% block contenido %}
+    <div class="container">
+        {{ sg_datatables_render(datatable) }}
+    </div>
+{% endblock %}

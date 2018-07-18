@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} EQUIVALENCIA DE CUENTAS COTIZACIÓN (EQ_MOVIPAT) **{{accion}}**
+    <a href="{{path("queryEqMoviPat")}}" class="btn btn-success">
+         <span class="glyphicon glyphicon-th-list"></span> Volver</a>
+{% endblock %}
+
+{% block contenido %}
+    <div class="container">
+        {% for message in app.session.flashbag().get('status') %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+        {% include 'eqmovipat/form.html.twig' %}
+    </div>
+    <div class="clearfix"> </div>
+{% endblock %}  

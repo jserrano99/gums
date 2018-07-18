@@ -1,0 +1,50 @@
+<div class="btn-group btn-group-justified" role="group" aria-label="...">  
+    {% if app.session.get('usuario_perfil') == 'ROLE_ADMIN' %}
+        {% include 'menuAdmin.html.twig' %}
+    {% endif %}
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle btn-primary" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Maestros 
+            <span class="glyphicon glyphicon-briefcase"></span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="{{path("queryModOcupa")}}">Modo Ocupación</a></li>
+            <li><a href="{{path("queryMoviPat")}}">Cuentas Cotización</a></li>
+            <li><a href="{{path("queryModoPago")}}">Modos de Pago</a></li>
+            <li><a href="{{path("queryAltas")}}">Motivos de Alta</a></li>
+            <li><a href="{{path("queryFco")}}">Formas de Cobertura</a></li>
+            <li><a href="{{path("queryTipoIlt")}}">Tipos de It</a></li>
+            <li><a href="{{path("queryAusencia")}}">Ausencias y Permisos</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle btn-primary" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Equivalencias 
+            <span class="glyphicon glyphicon-cog"></span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="{{path("queryEqModOcupa")}}">Modo Ocupación</a></li>
+            <li><a href="{{path("queryEqMoviPat")}}">Cuentas Cotización</a></li>
+            <li><a href="{{path("queryEqModoPago")}}">Modos de Pago</a></li>
+            <li><a href="{{path("queryEqAltas")}}">Motivos de Alta</a></li>
+            <li><a href="{{path("queryEqFco")}}">Formas de Cobertura</a></li>
+            <li><a href="{{path("queryEqTipoIlt")}}">Tipos de It</a></li>
+            <li><a href="{{path("queryEqAusencia")}}">Ausencias y Permisos</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" 
+                class="btn btn-default btn-danger"
+                onclick="cerrarSesion()"
+                data-toggle="tooltip" 
+                data-placement="bottom" 
+                title="Cerrar Sesión">Cerrar
+            <span class="glyphicon glyphicon-off"></span>
+        </button>
+    </div>
+
+</div>

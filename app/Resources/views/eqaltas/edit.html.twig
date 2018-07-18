@@ -1,0 +1,12 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} EQUIVALENCIA DE MOTIVOS DE ALTA(EQ_ALTAS) **{{accion}}**
+    <a href="{{path("queryEqAltas")}}" class="btn btn-success">
+         <span class="glyphicon glyphicon-th-list"></span> Volver</a>
+{% endblock %}
+
+{% block contenido %}
+    <div class="container">
+        {% include 'eqaltas/form.html.twig' %}
+    </div>
+    <div class="clearfix"> </div>
+{% endblock %}  

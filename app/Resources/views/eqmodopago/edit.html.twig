@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} EQUIVALENCIA DE MODOS DE PAGO (MODOPAGO) **{{accion}}**
+    <a href="{{path("queryEqModoPago")}}" class="btn btn-success">
+         <span class="glyphicon glyphicon-th-list"></span> Volver</a>
+{% endblock %}
+
+{% block contenido %}
+    <div class="container">
+        {% include 'eqmodopago/form.html.twig' %}
+    </div>
+{% endblock %}  

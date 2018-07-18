@@ -1,0 +1,21 @@
+<div class="container">
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="form_row">
+        {{form_row(form.edificio)}}
+    </div>
+    <div class="clearfix"></div>
+    <div class="form-row  mismalinea">
+        {{form_row(form.codigoLoc)}}
+    </div>
+    <div class="clearfix"></div>
+    <div class="form-row">
+        {{form_row(form.ausencia)}}
+    </div>
+    <div class="form-row">
+        {{form_row(form.Guardar)}}
+    </div>
+    <div class="form_row " >
+        {{ form_end(form) }}
+    </div>
+</div>

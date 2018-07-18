@@ -1,0 +1,12 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} EQUIVALENCIA DE FORMAS DE CONTRATACION (EQ_FCO) **{{accion}}**
+    <a href="{{path("queryEqFco")}}" class="btn btn-success">
+         <span class="glyphicon glyphicon-th-list"></span> Volver</a>
+{% endblock %}
+
+{% block contenido %}
+    <div class="container">
+        {% include 'eqfco/form.html.twig' %}
+    </div>
+    <div class="clearfix"> </div>
+{% endblock %}  

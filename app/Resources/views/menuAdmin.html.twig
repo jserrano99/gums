@@ -1,0 +1,15 @@
+<!-- Single button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle btn-primary" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Administración 
+        <span class="glyphicon glyphicon-wrench"></span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="{{path("queryUsuario")}}">Gestión Usuarios</a></li>
+        <li><a href="{{path("queryBaseDatos")}}">Bases de Datos</a></li>
+        <li><a href="{{path("cargaInicial")}}">Carga Inicial Tablas</a></li>
+
+    </ul>
+</div>

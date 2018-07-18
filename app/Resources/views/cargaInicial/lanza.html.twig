@@ -1,0 +1,75 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} SINCRONIZACIÓN DE TABLAS  <hr/> {% endblock %}
+
+{% block contenido %}
+    <script>
+        function Confirmar(tabla) {
+            bootbox.confirm("CONFIRMAR CARGA INICIAL DE LA TABLA  " + tabla,
+                    function (result) {
+                        if (result) {
+                            var recurso = Routing.generate("lanzaCarga", {"tabla": tabla}, true);
+                            $("#procesando").modal('show');
+                            $.ajax({
+                                type: "POST",
+                                url: recurso,
+                                success: function (data, status, xhr) {
+                                    $('.modal-backdrop').remove();
+                                    $('#procesando').hide();
+                                    $('#lanzamiento').hide();
+                                    $('#resultado').html(data);
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    $('#procesando').hide();
+                                    alert(xhr.status);
+                                }
+                            });
+                        }
+                    }
+            );
+        }
+
+    </script>
+
+    <div id="lanzamiento" class="container">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="MODOCUPA" 
+               onClick="Confirmar('cargaModOcupa')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="MOVIPAT" 
+               onClick="Confirmar('cargaMoviPat')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="MODOPAGO" 
+               onClick="Confirmar('cargaModoPago')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="ALTAS" 
+               onClick="Confirmar('cargaAltas')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="FCO" 
+               onClick="Confirmar('cargaFco')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="TIPOILT" 
+               onClick="Confirmar('cargaTipoIlt')">
+        <input type="button" 
+               class="btn btn-lg btn-warning" value="EPIACC" 
+               onClick="Confirmar('epiacc')">
+<input type="button" 
+               class="btn btn-lg btn-warning" value="OCUPACION" 
+               onClick="Confirmar('ocupacion')">
+
+        <br/><br/>
+    </div>
+
+    <div id="procesando" class="modal" role="dialog" margin="auto">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg">
+                <div class="modal-body" text-align="center">
+                    <img src="{{asset('img/Circulo-Carga-62157.gif')}}"></img>
+                    <h2><span>Realizando sincronización no cierre el navegador....</span></h2>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div id="resultado" class="container">
+    </div>
+{% endblock %}

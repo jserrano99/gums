@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %} 
+{% block titulo %} MODOS DE PAGO (MODOPAGO) **CONSULTA** 
+    <a href="{{path("addModoPago")}}" 
+       class="btn btn-success"
+       target="_blank">
+        <span class="glyphicon glyphicon-new-window"></span> Nuevo Modo Pago</a>
+    <hr/>
+{% endblock %} 
+
+{% block contenido %}
+    <div class="container">
+        {{ sg_datatables_render(datatable) }}
+    </div>
+{% endblock %}
